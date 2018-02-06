@@ -1,21 +1,21 @@
 
 Airplane.destroy_all
 
-A1 = Airplane.create name: "747", rows: 1, column: 'B'
-A2 = Airplane.create name: "A-380", rows: 1, column: 'A'
-A3 = Airplane.create name: "747", rows: 2, column: 'D'
-A4 = Airplane.create name: "A-380", rows: 2, column: 'C'
-A5 = Airplane.create name: "747", rows: 2, column: 'A'
+A1 = Airplane.create name: "747", rows: 4, column: '5'
+A2 = Airplane.create name: "A-380", rows: 4, column: '5'
+A3 = Airplane.create name: "747", rows: 4, column: '5'
+A4 = Airplane.create name: "A-380", rows: 4, column: '5'
+A5 = Airplane.create name: "747", rows: 4, column: '5'
 puts "There are #{Airplane.all.length} Airplanes"
 
 
 Flight.destroy_all
 
 F1 = Flight.create flight_No: "23", date: "1-1-2018", origin: 'Sydney', destination: 'Melbourne', plane:'747'
-F2 = Flight.create flight_No: "65", date: "1-2-2018", origin: 'Sydney', destination: 'Darwin', plane:'747'
+F2 = Flight.create flight_No: "65", date: "1-2-2018", origin: 'Sydney', destination: 'Darwin', plane:'748'
 F3 = Flight.create flight_No: "84", date: "1-3-2018", origin: 'Sydney', destination: 'Melbourne', plane:'747'
-F4 = Flight.create flight_No: "12", date: "1-4-2018", origin: 'Canberra', destination: 'Melbourne', plane:'747'
-F5 = Flight.create flight_No: "75", date: "1-5-2018", origin: 'Canberra', destination: 'Melbourne', plane:'747'
+F4 = Flight.create flight_No: "12", date: "1-4-2018", origin: 'Canberra', destination: 'Melbourne', plane:'749'
+F5 = Flight.create flight_No: "75", date: "1-5-2018", origin: 'Canberra', destination: 'Melbourne', plane:'749'
 puts "There are #{Flight.all.length} Flights"
 
 
