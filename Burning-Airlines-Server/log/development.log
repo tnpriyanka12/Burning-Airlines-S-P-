@@ -223,3 +223,1393 @@ Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.2ms)
 
 
   [1m[36mAirplane Load (1.6ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFlightIdToAirplane (20180206033925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aairplanes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text DEFAULT NULL, "rows" integer DEFAULT NULL, "column" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "flight_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "aairplanes" ("id","name","rows","column","created_at","updated_at","flight_id")
+                     SELECT "id","name","rows","column","created_at","updated_at","flight_id" FROM "airplanes"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "airplanes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "airplanes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text DEFAULT NULL, "rows" integer DEFAULT NULL, "column" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "airplanes" ("id","name","rows","column","created_at","updated_at")
+                     SELECT "id","name","rows","column","created_at","updated_at" FROM "aairplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aairplanes"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180206033925"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddAirplaneIdToFlight (20180206045019)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "flights" ADD "airplane_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180206045019"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (1.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."airplane_id" = ?[0m  [["airplane_id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (1.0ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."airplane_id" = ?[0m  [["airplane_id", 1]]
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 04:54:42.803451"], ["updated_at", "2018-02-06 04:54:42.803451"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 04:54:42.807011"], ["updated_at", "2018-02-06 04:54:42.807011"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 04:54:42.810558"], ["updated_at", "2018-02-06 04:54:42.810558"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 04:54:42.814231"], ["updated_at", "2018-02-06 04:54:42.814231"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 04:54:42.817671"], ["updated_at", "2018-02-06 04:54:42.817671"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 04:54:42.888479"], ["updated_at", "2018-02-06 04:54:42.888479"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 04:54:42.892842"], ["updated_at", "2018-02-06 04:54:42.892842"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at", "airplane_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 04:54:42.917255"], ["updated_at", "2018-02-06 04:54:42.917255"], ["airplane_id", 3]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at", "airplane_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 04:54:42.921527"], ["updated_at", "2018-02-06 04:54:42.921527"], ["airplane_id", 3]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at", "airplane_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 04:54:42.926980"], ["updated_at", "2018-02-06 04:54:42.926980"], ["airplane_id", 4]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."airplane_id" = ?[0m  [["airplane_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 04:56:51.377077"], ["updated_at", "2018-02-06 04:56:51.377077"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 04:56:51.379879"], ["updated_at", "2018-02-06 04:56:51.379879"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 04:56:51.383755"], ["updated_at", "2018-02-06 04:56:51.383755"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 04:56:51.388301"], ["updated_at", "2018-02-06 04:56:51.388301"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 04:56:51.394118"], ["updated_at", "2018-02-06 04:56:51.394118"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 3]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 04:56:51.446361"], ["updated_at", "2018-02-06 04:56:51.446361"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 04:56:51.457760"], ["updated_at", "2018-02-06 04:56:51.457760"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 04:56:51.462882"], ["updated_at", "2018-02-06 04:56:51.462882"]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 04:56:51.489978"], ["updated_at", "2018-02-06 04:56:51.489978"]]
+  [1m[35m (35.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 04:56:51.540837"], ["updated_at", "2018-02-06 04:56:51.540837"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 04:56:51.615572"], ["updated_at", "2018-02-06 04:56:51.615572"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 04:56:51.647086"], ["updated_at", "2018-02-06 04:56:51.647086"]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:56:51.715988"], ["airplane_id", 8], ["id", 4]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:56:51.735560"], ["airplane_id", 8], ["id", 6]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.9ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:56:51.748100"], ["airplane_id", 9], ["id", 7]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 8]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 9]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 04:58:05.219375"], ["updated_at", "2018-02-06 04:58:05.219375"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 04:58:05.224055"], ["updated_at", "2018-02-06 04:58:05.224055"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 04:58:05.228045"], ["updated_at", "2018-02-06 04:58:05.228045"]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 04:58:05.263458"], ["updated_at", "2018-02-06 04:58:05.263458"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 04:58:05.270410"], ["updated_at", "2018-02-06 04:58:05.270410"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 5]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.0ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 6]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.8ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 7]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 04:58:05.402320"], ["updated_at", "2018-02-06 04:58:05.402320"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 04:58:05.423460"], ["updated_at", "2018-02-06 04:58:05.423460"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 04:58:05.430545"], ["updated_at", "2018-02-06 04:58:05.430545"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 04:58:05.438507"], ["updated_at", "2018-02-06 04:58:05.438507"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 04:58:05.450479"], ["updated_at", "2018-02-06 04:58:05.450479"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  [1m[35m (28.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 04:58:05.654679"], ["updated_at", "2018-02-06 04:58:05.654679"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 04:58:05.661526"], ["updated_at", "2018-02-06 04:58:05.661526"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:05.684161"], ["airplane_id", 13], ["id", 9]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:05.706167"], ["airplane_id", 13], ["id", 11]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.8ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:05.733329"], ["airplane_id", 14], ["id", 12]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 13]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 15]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 16]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 17]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 04:58:31.304430"], ["updated_at", "2018-02-06 04:58:31.304430"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 04:58:31.310910"], ["updated_at", "2018-02-06 04:58:31.310910"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 04:58:31.315128"], ["updated_at", "2018-02-06 04:58:31.315128"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 04:58:31.318903"], ["updated_at", "2018-02-06 04:58:31.318903"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 04:58:31.326056"], ["updated_at", "2018-02-06 04:58:31.326056"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 9]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 10]]
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 11]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 12]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 13]]
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 04:58:31.411187"], ["updated_at", "2018-02-06 04:58:31.411187"]]
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 04:58:31.429197"], ["updated_at", "2018-02-06 04:58:31.429197"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 04:58:31.462551"], ["updated_at", "2018-02-06 04:58:31.462551"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 04:58:31.476410"], ["updated_at", "2018-02-06 04:58:31.476410"]]
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 04:58:31.495774"], ["updated_at", "2018-02-06 04:58:31.495774"]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 04:58:31.575889"], ["updated_at", "2018-02-06 04:58:31.575889"]]
+  [1m[35m (17.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 04:58:31.599099"], ["updated_at", "2018-02-06 04:58:31.599099"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 04:58:31.668498"], ["updated_at", "2018-02-06 04:58:31.668498"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 04:58:31.684158"], ["updated_at", "2018-02-06 04:58:31.684158"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:31.715195"], ["airplane_id", 18], ["id", 14]]
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:31.732862"], ["airplane_id", 18], ["id", 16]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 04:58:31.740791"], ["airplane_id", 19], ["id", 17]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 18]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 19]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 20]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 21]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 22]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:02:22.468227"], ["updated_at", "2018-02-06 05:02:22.468227"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:02:22.472207"], ["updated_at", "2018-02-06 05:02:22.472207"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:02:22.475010"], ["updated_at", "2018-02-06 05:02:22.475010"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:02:22.477833"], ["updated_at", "2018-02-06 05:02:22.477833"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:02:22.480613"], ["updated_at", "2018-02-06 05:02:22.480613"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 14]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 16]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 17]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 18]]
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:02:22.529621"], ["updated_at", "2018-02-06 05:02:22.529621"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:02:22.533564"], ["updated_at", "2018-02-06 05:02:22.533564"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:02:22.541702"], ["updated_at", "2018-02-06 05:02:22.541702"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:02:22.552615"], ["updated_at", "2018-02-06 05:02:22.552615"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:02:22.555800"], ["updated_at", "2018-02-06 05:02:22.555800"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:02:22.625520"], ["updated_at", "2018-02-06 05:02:22.625520"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:02:22.647600"], ["updated_at", "2018-02-06 05:02:22.647600"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:02:22.656129"], ["updated_at", "2018-02-06 05:02:22.656129"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:02:22.736969"], ["updated_at", "2018-02-06 05:02:22.736969"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:02:22.753597"], ["updated_at", "2018-02-06 05:02:22.753597"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:02:22.807589"], ["airplane_id", 23], ["id", 19]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:02:22.812990"], ["airplane_id", 23], ["id", 21]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:02:22.818674"], ["airplane_id", 24], ["id", 22]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserIdToReservation (20180206050731)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "reservations" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180206050731"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFlightIdToReservation (20180206050802)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "reservations" ADD "flight_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180206050802"]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 24]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 25]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 26]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 27]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:08:18.567317"], ["updated_at", "2018-02-06 05:08:18.567317"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:08:18.570809"], ["updated_at", "2018-02-06 05:08:18.570809"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:08:18.574404"], ["updated_at", "2018-02-06 05:08:18.574404"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:08:18.579108"], ["updated_at", "2018-02-06 05:08:18.579108"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:08:18.587867"], ["updated_at", "2018-02-06 05:08:18.587867"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 19]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 20]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 21]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 22]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 23]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:08:18.643819"], ["updated_at", "2018-02-06 05:08:18.643819"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:08:18.650519"], ["updated_at", "2018-02-06 05:08:18.650519"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:08:18.659567"], ["updated_at", "2018-02-06 05:08:18.659567"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:08:18.677215"], ["updated_at", "2018-02-06 05:08:18.677215"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:08:18.683268"], ["updated_at", "2018-02-06 05:08:18.683268"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 4]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 5]]
+  [1m[35m (9.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:08:18.776544"], ["updated_at", "2018-02-06 05:08:18.776544"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:08:18.783324"], ["updated_at", "2018-02-06 05:08:18.783324"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:08:18.795995"], ["updated_at", "2018-02-06 05:08:18.795995"]]
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (5.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:08:18.864571"], ["updated_at", "2018-02-06 05:08:18.864571"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:08:18.880715"], ["updated_at", "2018-02-06 05:08:18.880715"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.919941"], ["airplane_id", 28], ["id", 24]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.936462"], ["airplane_id", 28], ["id", 26]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.941563"], ["airplane_id", 29], ["id", 27]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.947205"], ["user_id", 11], ["id", 6]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.953073"], ["user_id", 11], ["id", 7]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.960081"], ["flight_id", 24], ["id", 6]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:18.969437"], ["flight_id", 24], ["id", 8]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 28]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 29]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 30]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 31]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 32]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:08:36.241105"], ["updated_at", "2018-02-06 05:08:36.241105"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:08:36.246070"], ["updated_at", "2018-02-06 05:08:36.246070"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:08:36.250642"], ["updated_at", "2018-02-06 05:08:36.250642"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:08:36.253593"], ["updated_at", "2018-02-06 05:08:36.253593"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:08:36.265916"], ["updated_at", "2018-02-06 05:08:36.265916"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 24]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 25]]
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 26]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 27]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 28]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:08:36.390946"], ["updated_at", "2018-02-06 05:08:36.390946"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:08:36.401028"], ["updated_at", "2018-02-06 05:08:36.401028"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:08:36.407439"], ["updated_at", "2018-02-06 05:08:36.407439"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:08:36.410617"], ["updated_at", "2018-02-06 05:08:36.410617"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:08:36.413655"], ["updated_at", "2018-02-06 05:08:36.413655"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 6]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 7]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:08:36.488474"], ["updated_at", "2018-02-06 05:08:36.488474"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:08:36.492073"], ["updated_at", "2018-02-06 05:08:36.492073"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:08:36.495808"], ["updated_at", "2018-02-06 05:08:36.495808"]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:08:36.564334"], ["updated_at", "2018-02-06 05:08:36.564334"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:08:36.583566"], ["updated_at", "2018-02-06 05:08:36.583566"]]
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.623807"], ["airplane_id", 33], ["id", 29]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.634598"], ["airplane_id", 33], ["id", 31]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.651728"], ["airplane_id", 34], ["id", 32]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.663505"], ["user_id", 13], ["id", 9]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.674141"], ["user_id", 13], ["id", 10]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.679914"], ["flight_id", 29], ["id", 9]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:08:36.698327"], ["flight_id", 29], ["id", 11]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (1.7ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" ORDER BY "airplanes"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."airplane_id" = ?[0m  [["airplane_id", 33]]
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 29]]
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 30]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 33]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 34]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 35]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 36]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 37]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:09:40.859965"], ["updated_at", "2018-02-06 05:09:40.859965"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:09:40.862786"], ["updated_at", "2018-02-06 05:09:40.862786"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:09:40.866151"], ["updated_at", "2018-02-06 05:09:40.866151"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:09:40.868924"], ["updated_at", "2018-02-06 05:09:40.868924"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:09:40.872686"], ["updated_at", "2018-02-06 05:09:40.872686"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 29]]
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 30]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 31]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 32]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 33]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:09:40.924193"], ["updated_at", "2018-02-06 05:09:40.924193"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:09:40.928503"], ["updated_at", "2018-02-06 05:09:40.928503"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:09:40.932068"], ["updated_at", "2018-02-06 05:09:40.932068"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:09:40.935492"], ["updated_at", "2018-02-06 05:09:40.935492"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:09:40.940448"], ["updated_at", "2018-02-06 05:09:40.940448"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 9]]
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 10]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 11]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:09:40.998513"], ["updated_at", "2018-02-06 05:09:40.998513"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:09:41.002930"], ["updated_at", "2018-02-06 05:09:41.002930"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:09:41.007773"], ["updated_at", "2018-02-06 05:09:41.007773"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:09:41.094815"], ["updated_at", "2018-02-06 05:09:41.094815"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:09:41.098776"], ["updated_at", "2018-02-06 05:09:41.098776"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.138070"], ["airplane_id", 38], ["id", 34]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.145064"], ["airplane_id", 38], ["id", 36]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.157606"], ["airplane_id", 39], ["id", 37]]
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.179085"], ["user_id", 15], ["id", 12]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.183628"], ["user_id", 15], ["id", 13]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.189832"], ["flight_id", 34], ["id", 12]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.195977"], ["flight_id", 34], ["id", 14]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:09:41.200202"], ["flight_id", 34], ["id", 13]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 35]]
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 35]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 38]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 39]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 40]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 41]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 42]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:10:08.554885"], ["updated_at", "2018-02-06 05:10:08.554885"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:10:08.559433"], ["updated_at", "2018-02-06 05:10:08.559433"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:10:08.564388"], ["updated_at", "2018-02-06 05:10:08.564388"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:10:08.569103"], ["updated_at", "2018-02-06 05:10:08.569103"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:10:08.573357"], ["updated_at", "2018-02-06 05:10:08.573357"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 34]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 35]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 36]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 37]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 38]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:10:08.630368"], ["updated_at", "2018-02-06 05:10:08.630368"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:10:08.638297"], ["updated_at", "2018-02-06 05:10:08.638297"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:10:08.643739"], ["updated_at", "2018-02-06 05:10:08.643739"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:10:08.648467"], ["updated_at", "2018-02-06 05:10:08.648467"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:10:08.666179"], ["updated_at", "2018-02-06 05:10:08.666179"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (2.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 12]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 13]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 14]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:10:08.768321"], ["updated_at", "2018-02-06 05:10:08.768321"]]
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.8ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:10:08.778381"], ["updated_at", "2018-02-06 05:10:08.778381"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:10:08.786687"], ["updated_at", "2018-02-06 05:10:08.786687"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 15]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 16]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:10:08.852729"], ["updated_at", "2018-02-06 05:10:08.852729"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:10:08.885402"], ["updated_at", "2018-02-06 05:10:08.885402"]]
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:08.978268"], ["airplane_id", 43], ["id", 39]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:08.997002"], ["airplane_id", 43], ["id", 41]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.018144"], ["airplane_id", 44], ["id", 42]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.026291"], ["user_id", 17], ["id", 15]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.034441"], ["user_id", 17], ["id", 16]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.042818"], ["flight_id", 39], ["id", 15]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.049485"], ["flight_id", 39], ["id", 17]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:10:09.054491"], ["flight_id", 40], ["id", 16]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 40]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateJoinTableFlightsUsers (20180206051353)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "flights_users" ("flight_id" integer NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180206051353"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 43]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 44]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 45]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 46]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 47]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:14:45.355551"], ["updated_at", "2018-02-06 05:14:45.355551"]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:14:45.361624"], ["updated_at", "2018-02-06 05:14:45.361624"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:14:45.366350"], ["updated_at", "2018-02-06 05:14:45.366350"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:14:45.371491"], ["updated_at", "2018-02-06 05:14:45.371491"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:14:45.376695"], ["updated_at", "2018-02-06 05:14:45.376695"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 39]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 40]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 41]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 42]]
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 43]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.9ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:14:45.476149"], ["updated_at", "2018-02-06 05:14:45.476149"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (12.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:14:45.495980"], ["updated_at", "2018-02-06 05:14:45.495980"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:14:45.511824"], ["updated_at", "2018-02-06 05:14:45.511824"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:14:45.520784"], ["updated_at", "2018-02-06 05:14:45.520784"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:14:45.529293"], ["updated_at", "2018-02-06 05:14:45.529293"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 15]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 16]]
+  [1m[35m (26.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 17]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:14:45.609384"], ["updated_at", "2018-02-06 05:14:45.609384"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:14:45.616919"], ["updated_at", "2018-02-06 05:14:45.616919"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:14:45.627570"], ["updated_at", "2018-02-06 05:14:45.627570"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.4ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 17]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 18]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:14:45.702153"], ["updated_at", "2018-02-06 05:14:45.702153"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:14:45.706513"], ["updated_at", "2018-02-06 05:14:45.706513"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.740865"], ["airplane_id", 48], ["id", 44]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.750030"], ["airplane_id", 48], ["id", 46]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.767998"], ["airplane_id", 49], ["id", 47]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.774923"], ["user_id", 19], ["id", 18]]
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.785167"], ["user_id", 19], ["id", 19]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.793541"], ["flight_id", 44], ["id", 18]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.796724"], ["flight_id", 44], ["id", 20]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:14:45.802232"], ["flight_id", 45], ["id", 19]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 48]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 49]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 50]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 51]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 52]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:15:33.394023"], ["updated_at", "2018-02-06 05:15:33.394023"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:15:33.402166"], ["updated_at", "2018-02-06 05:15:33.402166"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:15:33.405976"], ["updated_at", "2018-02-06 05:15:33.405976"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:15:33.408870"], ["updated_at", "2018-02-06 05:15:33.408870"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:15:33.415535"], ["updated_at", "2018-02-06 05:15:33.415535"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 44]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 45]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 46]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 47]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 48]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:15:33.491623"], ["updated_at", "2018-02-06 05:15:33.491623"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:15:33.499283"], ["updated_at", "2018-02-06 05:15:33.499283"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:15:33.505949"], ["updated_at", "2018-02-06 05:15:33.505949"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (6.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:15:33.515879"], ["updated_at", "2018-02-06 05:15:33.515879"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:15:33.523244"], ["updated_at", "2018-02-06 05:15:33.523244"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 18]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 19]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 20]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:15:33.571563"], ["updated_at", "2018-02-06 05:15:33.571563"]]
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:15:33.581623"], ["updated_at", "2018-02-06 05:15:33.581623"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:15:33.594849"], ["updated_at", "2018-02-06 05:15:33.594849"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 19]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 20]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:15:33.654406"], ["updated_at", "2018-02-06 05:15:33.654406"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:15:33.662882"], ["updated_at", "2018-02-06 05:15:33.662882"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.690833"], ["airplane_id", 53], ["id", 49]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.707872"], ["airplane_id", 53], ["id", 51]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (5.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.725764"], ["airplane_id", 54], ["id", 52]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.752386"], ["user_id", 21], ["id", 21]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.762290"], ["user_id", 21], ["id", 22]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.766801"], ["flight_id", 49], ["id", 21]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.769924"], ["flight_id", 49], ["id", 23]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:15:33.773038"], ["flight_id", 50], ["id", 22]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 53]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 54]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 55]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 56]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "airplanes" WHERE "airplanes"."id" = ?[0m  [["id", 57]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 1], ["column", "B"], ["created_at", "2018-02-06 05:16:24.273401"], ["updated_at", "2018-02-06 05:16:24.273401"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 5], ["column", "A"], ["created_at", "2018-02-06 05:16:24.278497"], ["updated_at", "2018-02-06 05:16:24.278497"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 8], ["column", "D"], ["created_at", "2018-02-06 05:16:24.282614"], ["updated_at", "2018-02-06 05:16:24.282614"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "A-380"], ["rows", 11], ["column", "K"], ["created_at", "2018-02-06 05:16:24.287403"], ["updated_at", "2018-02-06 05:16:24.287403"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "airplanes" ("name", "rows", "column", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "747"], ["rows", 2], ["column", "E"], ["created_at", "2018-02-06 05:16:24.291413"], ["updated_at", "2018-02-06 05:16:24.291413"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 49]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 50]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 51]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 52]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "flights" WHERE "flights"."id" = ?[0m  [["id", 53]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 23], ["date", "1-1-2018"], ["origin", "Sydney"], ["destination", "Perth"], ["plane", "747"], ["created_at", "2018-02-06 05:16:24.356412"], ["updated_at", "2018-02-06 05:16:24.356412"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 65], ["date", "1-2-2018"], ["origin", "Melbourne"], ["destination", "Darwin"], ["plane", "747"], ["created_at", "2018-02-06 05:16:24.365496"], ["updated_at", "2018-02-06 05:16:24.365496"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 84], ["date", "1-3-2018"], ["origin", "Perth"], ["destination", "Canberra"], ["plane", "747"], ["created_at", "2018-02-06 05:16:24.386687"], ["updated_at", "2018-02-06 05:16:24.386687"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 12], ["date", "1-4-2018"], ["origin", "Canberra"], ["destination", "Adelaide"], ["plane", "747"], ["created_at", "2018-02-06 05:16:24.393253"], ["updated_at", "2018-02-06 05:16:24.393253"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flights" ("flight_No", "date", "origin", "destination", "plane", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["flight_No", 75], ["date", "1-5-2018"], ["origin", "Adelaide"], ["destination", "Sydney"], ["plane", "747"], ["created_at", "2018-02-06 05:16:24.402753"], ["updated_at", "2018-02-06 05:16:24.402753"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 21]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 22]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "reservations" WHERE "reservations"."id" = ?[0m  [["id", 23]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 235], ["created_at", "2018-02-06 05:16:24.472684"], ["updated_at", "2018-02-06 05:16:24.472684"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-1-2018"], ["reservation_No", 232], ["created_at", "2018-02-06 05:16:24.480664"], ["updated_at", "2018-02-06 05:16:24.480664"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reservations" ("date", "reservation_No", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["date", "1-2-2018"], ["reservation_No", 234], ["created_at", "2018-02-06 05:16:24.484075"], ["updated_at", "2018-02-06 05:16:24.484075"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 21]]
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 22]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sam"], ["email", "Samuel.westen01@gmail.com"], ["created_at", "2018-02-06 05:16:24.543051"], ["updated_at", "2018-02-06 05:16:24.543051"]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Barry"], ["email", "Barry.Easten02@gmail.com"], ["created_at", "2018-02-06 05:16:24.552388"], ["updated_at", "2018-02-06 05:16:24.552388"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.600519"], ["airplane_id", 58], ["id", 54]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.604495"], ["airplane_id", 58], ["id", 56]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.2ms)[0m  [1m[33mUPDATE "flights" SET "updated_at" = ?, "airplane_id" = ? WHERE "flights"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.616324"], ["airplane_id", 59], ["id", 57]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.629726"], ["user_id", 23], ["id", 24]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "user_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.638728"], ["user_id", 23], ["id", 25]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.645313"], ["flight_id", 54], ["id", 24]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.659854"], ["flight_id", 54], ["id", 26]]
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "reservations" SET "updated_at" = ?, "flight_id" = ? WHERE "reservations"."id" = ?[0m  [["updated_at", "2018-02-06 05:16:24.692976"], ["flight_id", 55], ["id", 25]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 54]]
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 55]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = ?[0m  [["user_id", 23]]
+  [1m[36mFlight Load (0.1ms)[0m  [1m[34mSELECT  "flights".* FROM "flights" ORDER BY "flights"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReservation Load (0.3ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."flight_id" = ?[0m  [["flight_id", 54]]
