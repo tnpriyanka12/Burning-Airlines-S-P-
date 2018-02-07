@@ -25,7 +25,7 @@ class FlightsController < ApplicationController
   # POST /flights
   # POST /flights.json
   def create
-    @flight = Flight.new(flight_params)
+    @flight = Flight.new destination: params[:content]  #(flight_params)
 
     respond_to do |format|
       if @flight.save

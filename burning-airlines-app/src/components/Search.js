@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SearchForm from './SearchForm';
+
 
 
 
 const SERVER_URL = 'http://localhost:3000/flights.json'
+const SERVER_URL_POST = 'http://localhost:3000/flights.json'
+
+function Output (props){
+  console.log('output 111 ', props.flights)
+  return (
+    <div>
+      {
+         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
+       }
+
+
+    </div>
+  );
+}
 
 class Search extends Component {
   constructor (){
@@ -12,14 +28,30 @@ class Search extends Component {
       flights: []
     };
 
+    this.saveFlight = this.saveFlight.bind( this );
   }
+
+  saveFlight( flight ){
+    console.log('saveFlight: ', flight);
+
+    // Rails:   Secret.create content: secret
+    axios.post(SERVER_URL_POST, { content: flight }).then( results => {
+      this.setState({
+        flights: [results.data, ...this.state.flights ]
+      });
+    });
+
+  }
+
+
+
 
   componentWillMount(){
 
 
   const fetchFlights = () => {
 
-    axios.get(SERVER_URL).then( results => this.setState({flights: results.data.reverse() }));
+    axios.get(SERVER_URL).then( results => this.setState({flights: results.data }));
   };
 
   fetchFlights();
@@ -31,12 +63,9 @@ render(){
   return(
   <div>
     <h1>Search Here</h1>
-    <form>
-      <label>
-        Flight:<input type="text" name="name" />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+    <SearchForm onSubmit={ this.saveFlight } />
+    <hr />
+    <Output flights={ this.state.flights }/>
   </div>
 )}
 
