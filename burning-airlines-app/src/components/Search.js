@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
+import Seat from './Seat';
 
 
 
@@ -67,6 +68,7 @@ render(){
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
     <Output flights={ this.state.flights }/>
+    <Seat />
   </div>
 )}
 
