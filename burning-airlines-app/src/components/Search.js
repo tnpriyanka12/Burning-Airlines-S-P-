@@ -4,8 +4,6 @@ import SearchForm from './SearchForm';
 import Seat from './Seat';
 
 
-
-
 const SERVER_URL = 'http://localhost:3000/flights.json'
 const SERVER_URL_POST = 'http://localhost:3000/flights.json'
 
@@ -14,10 +12,8 @@ function Output (props){
   return (
     <div>
       {
-         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
+         props.flights[0].map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
        }
-
-
     </div>
   );
 }
@@ -32,33 +28,30 @@ class Search extends Component {
     this.saveFlight = this.saveFlight.bind( this );
   }
 
-  saveFlight( flight ){
-    console.log('saveFlight: ', flight);
+//
+//   componentWillMount(){
+//
+//   const fetchFlights = () => {
+//
+//     axios.get(SERVER_URL).then( results => this.setState({flights: results.data }));
+//   };
+//
+//   fetchFlights();
+//
+// }
 
-    // Rails:   Secret.create content: secret
-    axios.post(SERVER_URL_POST, { origin: flight }).then( results => {
-      this.setState({
-        flights: [results.data, this.state.flights ]
-      });
+saveFlight( flight ){
+  console.log('saveFlight: ', flight);
+
+  axios.post(SERVER_URL_POST, { origin: flight }).then( results => {
+    this.setState({
+      flights: [results.data, this.state.flights ]
     });
-
-  }
-
+  });
 
 
-
-  componentWillMount(){
-
-
-  const fetchFlights = () => {
-
-    axios.get(SERVER_URL).then( results => this.setState({flights: results.data }));
-  };
-
-  fetchFlights();
 
 }
-
 
 render(){
   return(
@@ -72,6 +65,5 @@ render(){
 )}
 
 }
-
 
 export default Search;

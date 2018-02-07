@@ -4,7 +4,6 @@ import '../index.css';
 import Search from './Search'
 
 
-
 function Square(props) {
 return (
   <button className="square" onClick={props.onClick}>
@@ -13,7 +12,7 @@ return (
 );
 }
 
-class Seat extends Component {
+class Seat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -28,7 +28,7 @@ class SearchForm extends Component {
         <textarea onChange={ this._handleChange } placeholder="Destination"></textarea>
 
         <br />
-        <input type="submit" value="Search Flights" />
+        <input className='test' type="submit" value="Search Flights" />
       </form>
     )
   }
