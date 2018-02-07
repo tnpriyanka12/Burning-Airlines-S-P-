@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
+import Seat from './Seat';
 
 
 
@@ -35,9 +36,9 @@ class Search extends Component {
     console.log('saveFlight: ', flight);
 
     // Rails:   Secret.create content: secret
-    axios.post(SERVER_URL_POST, { content: flight }).then( results => {
+    axios.post(SERVER_URL_POST, { origin: flight }).then( results => {
       this.setState({
-        flights: [results.data, ...this.state.flights ]
+        flights: [results.data, this.state.flights ]
       });
     });
 
@@ -66,6 +67,7 @@ render(){
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
     <Output flights={ this.state.flights }/>
+    <Seat />
   </div>
 )}
 
