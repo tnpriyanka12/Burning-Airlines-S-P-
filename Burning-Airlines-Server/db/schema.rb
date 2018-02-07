@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180206125506) do
     t.integer "airplane_id"
   end
 
-  create_table "flights_users", force: :cascade do |t|
+  create_table "flights_users", id: false, force: :cascade do |t|
     t.integer "flight_id"
     t.integer "user_id"
   end

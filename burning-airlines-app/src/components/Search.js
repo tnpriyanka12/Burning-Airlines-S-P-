@@ -11,7 +11,7 @@ const SERVER_URL_POST = 'http://localhost:3000/search.json'
 
 function Output (props){
   console.log('output 111 ', props.flights)
-  debugger;
+  // debugger;
   return (
     <div>
       {
