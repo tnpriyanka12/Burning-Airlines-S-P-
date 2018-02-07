@@ -6,16 +6,17 @@ import SearchForm from './SearchForm';
 
 
 const SERVER_URL = 'http://localhost:3000/flights.json'
-const SERVER_URL_POST = 'http://localhost:3000/flights.json'
+const SERVER_URL_POST = 'http://localhost:3000/search.json'
 
 function Output (props){
   console.log('output 111 ', props.flights)
+  debugger;
   return (
     <div>
       {
-         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
+         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin } {s.destination }</p> )
        }
-
+       <p> Here !</p>
 
     </div>
   );
@@ -36,8 +37,9 @@ class Search extends Component {
 
     // Rails:   Secret.create content: secret
     axios.post(SERVER_URL_POST, { content: flight }).then( results => {
+      console.log('Filtered Results are: ',results.data.results);
       this.setState({
-        flights: [results.data, ...this.state.flights ]
+        flights: results.data.results[0]
       });
     });
 
@@ -47,7 +49,6 @@ class Search extends Component {
 
 
   componentWillMount(){
-
 
   const fetchFlights = () => {
 
