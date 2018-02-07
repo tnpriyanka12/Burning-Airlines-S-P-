@@ -34,6 +34,8 @@ class SearchForm extends Component {
   }
 }
 
+
+
 SearchForm.propTypes = {
   onSubmit: PropTypes.func.isRequired
 };

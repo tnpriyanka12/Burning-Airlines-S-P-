@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
 import Seat from './Seat';
+import { Link } from 'react-router-dom';
+import React, {PureComponent as Component} from 'react';
+
+
 
 
 const SERVER_URL = 'http://localhost:3000/flights.json'
@@ -25,7 +29,7 @@ class Search extends Component {
     this.state = {
       flights: []
     };
-1
+
     this.saveFlight = this.saveFlight.bind( this );
   }
 
@@ -39,7 +43,7 @@ class Search extends Component {
         flights: results.data.results[0]
       });
     });
-  });
+  };
 
 
 
@@ -59,6 +63,10 @@ render(){
   return(
   <div>
     <h1>Search Here</h1>
+    <ul>
+      <Link to="/Seat">
+Seating        </Link>
+    </ul>
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
     <Output flights={ this.state.flights }/>
