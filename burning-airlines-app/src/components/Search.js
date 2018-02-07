@@ -13,11 +13,12 @@ const SERVER_URL_POST = 'http://localhost:3000/search.json'
 
 function Output (props){
   console.log('output 111 ', props.flights)
-  // debugger;
   return (
     <div>
       {
-         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin } {s.destination }</p> )
+      props.flights.map( s =>
+        <p key={ s.id }><Link to="/Seat">{ s.flight_No} {s.origin } {s.destination } </Link></p>
+        )
        }
     </div>
   );
@@ -64,8 +65,7 @@ render(){
   <div>
     <h1>Search Here</h1>
     <ul>
-      <Link to="/Seat">
-Seating        </Link>
+      <Link to="/Seat">Seating </Link>
     </ul>
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
