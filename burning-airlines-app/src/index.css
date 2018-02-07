@@ -1,10 +1,21 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background: #AA140B;
+  font-family: 'Poiret One', cursive;
+  /*background: #f44336;*/
+  text-align: center;
 }
 
 .test {
   background: grey;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 12px;
+    border-color: gray;
+    padding: 2px;
+}
+table, th {
+    border: 1px solid black;
 }
