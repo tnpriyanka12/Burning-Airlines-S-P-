@@ -12,7 +12,7 @@ function Output (props){
   return (
     <div>
       {
-         props.flights[0].map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
+         props.flights.map( s => <p key={ s.id }>{ s.flight_No} {s.origin }</p> )
        }
     </div>
   );
@@ -24,7 +24,7 @@ class Search extends Component {
     this.state = {
       flights: []
     };
-
+1
     this.saveFlight = this.saveFlight.bind( this );
   }
 
@@ -36,7 +36,7 @@ class Search extends Component {
 //     axios.get(SERVER_URL).then( results => this.setState({flights: results.data }));
 //   };
 //
-//   fetchFlights();
+  // fetchFlights();
 //
 // }
 
