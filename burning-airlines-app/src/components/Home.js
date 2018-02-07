@@ -12,9 +12,8 @@ class Home extends Component {
 
           Click for Flight Search
           <br/> <Link to="/search"> FLIGHT SEARCH</Link><hr/>
-          What is this website for? This is answered in <Link to="/faq/23">FAQ #23</Link><br/>
 
-          A link from state: <Link to={`/faq/${someStateID}`}>here</Link><br/>
+          test link : <Link to={`/faq/${someStateID}`}>here</Link><br/>
 
 
       </div>

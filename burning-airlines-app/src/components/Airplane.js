@@ -30,7 +30,7 @@ class Airplane extends Component {
   componentWillMount(){
 
   const fetchAirplane = () => {
-      axios.get('http://localhost:3000/airplanes/1.json').then( results => this.setState({plane: results.data}) );
+      axios.get('http://localhost:3000/airplanes/6.json').then( results => this.setState({plane: results.data}) );
       };
 
     //   axios.get('http://localhost:3000/airplanes/', {
@@ -49,7 +49,7 @@ class Airplane extends Component {
       <div>
         <h2>Airplane Page</h2>
         <AirplaneDetails plane={ this.state.plane }/>
-        <Seat />
+        <Seat plane={ this.state.plane }/>
       </div>
     );
   }
