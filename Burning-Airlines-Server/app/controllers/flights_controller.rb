@@ -24,7 +24,7 @@ class FlightsController < ApplicationController
 
 
 
-  # Post /flights/search
+  # Post /search
   def search
     # @flights = Flight.where destination: params[:content]
     puts params
@@ -34,7 +34,7 @@ class FlightsController < ApplicationController
     destination = params[:content]
     # Filter everything out based on destination
 
-    filtered_flights = Flight.all.where(:destination=>"Melbourne")
+    filtered_flights = Flight.all.where(:destination=>destination)
     puts filtered_flights
 
     render json: {results: [filtered_flights]}, status: :ok
