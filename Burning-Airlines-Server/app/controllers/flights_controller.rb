@@ -22,10 +22,30 @@ class FlightsController < ApplicationController
   def edit
   end
 
+
+
+  # Post /flights/search
+  def search
+    # @flights = Flight.where destination: params[:content]
+    puts params
+    puts "GOT PARAMS VAL: #{params[:content]}"
+
+    # Get the destination from params
+    destination = params[:content]
+    # Filter everything out based on destination
+
+    filtered_flights = Flight.all.where(:destination=>"Melbourne")
+    puts filtered_flights
+
+    render json: {results: [filtered_flights]}, status: :ok
+  end
+
+
+
   # POST /flights
   # POST /flights.json
   def create
-    @flight = Flight.new destination: params[:content]  #(flight_params)
+    @flight = Flight.new #(flight_params)
 
     respond_to do |format|
       if @flight.save
