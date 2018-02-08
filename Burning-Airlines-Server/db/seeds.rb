@@ -14,7 +14,7 @@ Flight.destroy_all
 F1 = Flight.create flight_No: "23", date: "1-1-2018", origin: 'Sydney', destination: 'Melbourne', plane:'747'
 F2 = Flight.create flight_No: "65", date: "1-2-2018", origin: 'Sydney', destination: 'Darwin', plane:'748'
 F3 = Flight.create flight_No: "84", date: "1-3-2018", origin: 'Sydney', destination: 'Melbourne', plane:'747'
-F4 = Flight.create flight_No: "12", date: "1-4-2018", origin: 'Canberra', destination: 'Melbourne', plane:'749'
+F4 = Flight.create flight_No: "12", date: "1-4-2018", origin: 'Canberra', destination: 'Sydney', plane:'749'
 F5 = Flight.create flight_No: "75", date: "1-5-2018", origin: 'Canberra', destination: 'Melbourne', plane:'749'
 puts "There are #{Flight.all.length} Flights"
 

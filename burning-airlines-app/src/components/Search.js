@@ -11,15 +11,36 @@ import React, {PureComponent as Component} from 'react';
 const SERVER_URL = 'http://localhost:3000/flights.json'
 const SERVER_URL_POST = 'http://localhost:3000/search.json'
 
+
+
 function Output (props){
   console.log('output 111 ', props.flights)
+  // debugger;
   return (
     <div>
+      <table>
+        <tr>
+        <th> Flight_No</th>
+        <th>Origin</th>
+        <th> Destination</th>
+        </tr><tr>
       {
-      props.flights.map( s =>
-        <p key={ s.id }><Link to="/Seat">{ s.flight_No} {s.origin } {s.destination } </Link></p>
-        )
+
+         props.flights.map( s =>
+
+            <p key={ s.id }>
+
+            <td><Link to={`/flights/${ s.flight_No}`}>{ s.flight_No}</Link></td>
+            <td> {s.origin } </td>
+            <td> {s.destination }</td>
+
+
+            </p>
+
+           )
        }
+       </tr>
+       </table>
     </div>
   );
 }
@@ -28,7 +49,7 @@ class Search extends Component {
   constructor (){
     super();
     this.state = {
-      flights: []
+      flights: [],
     };
 
     this.saveFlight = this.saveFlight.bind( this );
@@ -56,21 +77,23 @@ class Search extends Component {
     axios.get(SERVER_URL).then( results => this.setState({flights: results.data }));
   };
 
-  fetchFlights();
+    fetchFlights();
+
 
 }
 
 render(){
   return(
   <div>
-    <h1>Search Here</h1>
+    <h1>AIRLINES</h1>
     <ul>
       <Link to="/Seat">Seating </Link>
     </ul>
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
-    <Output flights={ this.state.flights }/>
-    <Seat />
+      <Output flights={ this.state.flights }/>
+
+
   </div>
 )}
 

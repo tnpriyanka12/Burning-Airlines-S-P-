@@ -1270,3 +1270,1174 @@ Processing by FlightsController#index as JSON
 Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:28:43 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (14.0ms)
+Completed 200 OK in 28ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:29:54 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (2.0ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 45ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:29:58 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (9.9ms)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:29:59 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:30:02 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (2.6ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (2.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (20.2ms)
+Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:38:07 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:39:03 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (3.0ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (13.7ms)
+Completed 200 OK in 30ms (Views: 24.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:39:10 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (7.6ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:39:12 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:41:23 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:41:29 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:47:53 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:48:02 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (8.9ms)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/search.json" for 127.0.0.1 at 2018-02-08 09:48:09 +1100
+Processing by FlightsController#search as JSON
+  Parameters: {"content"=>"Melbourne", "flight"=>{}}
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."destination" = ?[0m  [["destination", "Melbourne"]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:48:13 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:48:18 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (15.7ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:48:19 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:48:26 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (13.6ms)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:48:30 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:48:31 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (9.5ms)
+Completed 200 OK in 24ms (Views: 20.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:48:49 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (12.9ms)
+Completed 200 OK in 27ms (Views: 22.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:49:03 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (10.6ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/search.json" for 127.0.0.1 at 2018-02-08 09:50:43 +1100
+Processing by FlightsController#search as JSON
+  Parameters: {"content"=>"Melbourne\n", "flight"=>{}}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."destination" = ?[0m  [["destination", "Melbourne\n"]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:51:18 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (8.7ms)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 09:56:48 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (2.2ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (25.6ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 09:56:49 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:44 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:49 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:51 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:53 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:54 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:56 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:13:58 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:20:03 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (10.1ms)
+Completed 200 OK in 27ms (Views: 22.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:21:36 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/_flight.json.jbuilder (1.2ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (16.9ms)
+Completed 200 OK in 34ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:21:38 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:21:42 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (14.5ms)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:21:45 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:22:07 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (1.0ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (2.6ms)
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (19.8ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:22:09 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:22:21 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (7.7ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/search.json" for 127.0.0.1 at 2018-02-08 10:22:27 +1100
+Processing by FlightsController#search as JSON
+  Parameters: {"content"=>"Melbourne", "flight"=>{}}
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."destination" = ?[0m  [["destination", "Melbourne"]]
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:22:28 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:22:44 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (11.2ms)
+Completed 200 OK in 25ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:25:08 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (13.7ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:25:10 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:25:16 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (7.9ms)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:26:02 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (2.7ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (1.8ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (21.9ms)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:26:04 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:27:10 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:28:20 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:28:30 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:28:34 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:28:43 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:29:33 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:30:03 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:42:14 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (8.8ms)
+Completed 200 OK in 23ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:42:30 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:43:06 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (1.7ms)
+  Rendered flights/index.json.jbuilder (23.6ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:46:50 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.7ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (15.3ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:46:53 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.9ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:47:19 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:47:46 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (14.0ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:47:54 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:48:09 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/index.json.jbuilder (12.0ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:54:07 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (2.8ms)
+  Rendered flights/_flight.json.jbuilder (3.9ms)
+  Rendered flights/_flight.json.jbuilder (2.1ms)
+  Rendered flights/_flight.json.jbuilder (1.6ms)
+  Rendered flights/_flight.json.jbuilder (5.7ms)
+  Rendered flights/index.json.jbuilder (74.2ms)
+Completed 200 OK in 96ms (Views: 92.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:54:11 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 10:54:17 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (12.2ms)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/search.json" for 127.0.0.1 at 2018-02-08 10:54:24 +1100
+Processing by FlightsController#search as JSON
+  Parameters: {"content"=>"Melbourne", "flight"=>{}}
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights" WHERE "flights"."destination" = ?[0m  [["destination", "Melbourne"]]
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:54:25 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:55:17 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:57:07 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:57:28 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:57:43 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:57:51 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:58:11 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:58:51 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 10:59:43 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:00:51 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:00:55 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:02:07 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 11:02:19 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (9.6ms)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:02:22 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:03:39 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:24:12 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:24:14 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (1.0ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:24:15 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:26:12 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:27:02 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:28:42 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:28:45 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:29:11 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/airplanes/6.json" for 127.0.0.1 at 2018-02-08 11:30:13 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Airplane with 'id'=6):
+  
+app/controllers/airplanes_controller.rb:67:in `set_airplane'
+Started GET "/" for 127.0.0.1 at 2018-02-08 11:30:26 +1100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Samudabamu/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Samudabamu/.rvm/gems/ruby-2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/airplanes/new" for 127.0.0.1 at 2018-02-08 11:30:31 +1100
+Processing by AirplanesController#new as HTML
+  Rendering airplanes/new.html.erb within layouts/application
+  Rendered airplanes/_form.html.erb (48.3ms)
+  Rendered airplanes/new.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 374ms (Views: 366.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2018-02-08 11:30:35 +1100
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  Rendered airplanes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/1" for 127.0.0.1 at 2018-02-08 11:30:37 +1100
+Processing by AirplanesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.html.erb within layouts/application
+  Rendered airplanes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/5" for 127.0.0.1 at 2018-02-08 11:30:41 +1100
+Processing by AirplanesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering airplanes/show.html.erb within layouts/application
+  Rendered airplanes/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/1.json" for 127.0.0.1 at 2018-02-08 11:30:49 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.json.jbuilder
+  Rendered airplanes/_airplane.json.jbuilder (1.0ms)
+  Rendered airplanes/show.json.jbuilder (3.7ms)
+Completed 200 OK in 27ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/1.json" for 127.0.0.1 at 2018-02-08 11:30:59 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.json.jbuilder
+  Rendered airplanes/_airplane.json.jbuilder (4.8ms)
+  Rendered airplanes/show.json.jbuilder (23.2ms)
+Completed 200 OK in 101ms (Views: 96.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/1.json" for 127.0.0.1 at 2018-02-08 11:31:35 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.1ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.json.jbuilder
+  Rendered airplanes/_airplane.json.jbuilder (1.3ms)
+  Rendered airplanes/show.json.jbuilder (3.8ms)
+Completed 200 OK in 21ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2018-02-08 11:38:58 +1100
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (2.4ms)
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/index.json.jbuilder (16.2ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/airplanes/1.json" for 127.0.0.1 at 2018-02-08 11:39:01 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.json.jbuilder
+  Rendered airplanes/_airplane.json.jbuilder (0.6ms)
+  Rendered airplanes/show.json.jbuilder (2.0ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/airplanes/1.json" for 127.0.0.1 at 2018-02-08 11:41:00 +1100
+Processing by AirplanesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAirplane Load (0.2ms)[0m  [1m[34mSELECT  "airplanes".* FROM "airplanes" WHERE "airplanes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering airplanes/show.json.jbuilder
+  Rendered airplanes/_airplane.json.jbuilder (1.3ms)
+  Rendered airplanes/show.json.jbuilder (3.9ms)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
