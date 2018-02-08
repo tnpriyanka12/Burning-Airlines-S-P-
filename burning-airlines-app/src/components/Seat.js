@@ -2,6 +2,7 @@ import React, {PureComponent as Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 import Search from './Search'
+import Layout from './Layout'
 
 
 class Square extends React.Component {
@@ -99,6 +100,7 @@ class Seat extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <Layout />
 
       </div>
     );

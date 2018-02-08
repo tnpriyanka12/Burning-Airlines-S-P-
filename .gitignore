@@ -5,3 +5,5 @@
 Burning-Airlines-Server/tmp/*
 Burning-Airlines-Server/db/*.sqlite3
 Burning-Airlines-Server/log/*
+
+Burning-Airlines-Server/db/development.sqlite3

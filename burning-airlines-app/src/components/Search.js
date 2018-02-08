@@ -2,6 +2,7 @@
 import axios from 'axios';
 import SearchForm from './SearchForm';
 import Seat from './Seat';
+import Layout from './Layout';
 import { Link } from 'react-router-dom';
 import React, {PureComponent as Component} from 'react';
 
