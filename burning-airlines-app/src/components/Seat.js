@@ -2,21 +2,32 @@ import React, {PureComponent as Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../index.css';
 import Search from './Search'
+import Layout from './Layout'
 
 
-function Square(props) {
-return (
-  <button className="square" onClick={props.onClick}>
-    {props.value}
-  </button>
-);
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
+  render() {
+    return (
+      <button className="square" onClick={() => this.setState({value: 'X'})}>
+        {this.state.value}
+      </button>
+    );
+  }
 }
+
 
 function Genseats(props) {
   console.log('seats:', props.rows);
   for( let i = 0; i < 5; i++ ){
     return (
-      <div> hi
+      <div>
         {props.rows}
       </div>
     );
@@ -31,14 +42,15 @@ class Seat extends React.Component {
       squares: Array(9).fill(null),
       xIsNext: true,
     };
-
   }
+
+
 
   renderSquare(i) {
     return (
       <Square
         value={this.state.squares[i]}
-        onClick={() => this.handleClick(i)}
+        onClick={() => alert('clicked') }
       />
     );
   }
@@ -88,6 +100,8 @@ class Seat extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        <Layout />
+
       </div>
     );
   }

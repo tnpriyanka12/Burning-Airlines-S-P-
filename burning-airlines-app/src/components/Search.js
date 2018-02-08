@@ -2,6 +2,7 @@
 import axios from 'axios';
 import SearchForm from './SearchForm';
 import Seat from './Seat';
+import Layout from './Layout';
 import { Link } from 'react-router-dom';
 import React, {PureComponent as Component} from 'react';
 
@@ -85,13 +86,14 @@ class Search extends Component {
 render(){
   return(
   <div>
-    <h1>THE B-AIRLINES </h1>
+    <h1>AIRLINES</h1>
     <ul>
       <Link to="/Seat">Seating </Link>
     </ul>
     <SearchForm onSubmit={ this.saveFlight } />
     <hr />
-    <Output flights={ this.state.flights }/>
+      <Output flights={ this.state.flights }/>
+
 
   </div>
 )}

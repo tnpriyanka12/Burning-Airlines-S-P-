@@ -10,6 +10,15 @@ class AirplanesController < ApplicationController
   # GET /airplanes/1
   # GET /airplanes/1.json
   def show
+   #  rows = []
+   #  num_rows = Airplane.first.rows
+   #  num_columns = Airplane.first.column
+   #  for i in 1..num_rows
+   #    rows[i] = 0;
+   #  end
+   #
+   #
+   # render json: {results: rows}, status: :ok
   end
 
   # GET /airplanes/new

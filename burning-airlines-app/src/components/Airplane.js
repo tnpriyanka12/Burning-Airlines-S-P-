@@ -30,13 +30,16 @@ class Airplane extends Component {
   componentWillMount(){
 
   const fetchAirplane = () => {
-      axios.get('http://localhost:3000/airplanes/6.json').then( results => this.setState({plane: results.data}) );
-      };
+      // axios.get('http://localhost:3000/airplanes/11.json').then( results => this.setState({plane: results.data}) );
+      // };
 
-    //   axios.get('http://localhost:3000/airplanes/', {
-    //   id: {props.id}
-    // }).then( results => this.setState({plane: results.data}) );
-    // };
+      axios.get('http://localhost:3000/airplanes/',
+      {
+      id: 11,
+      json: 'json'
+      }
+    ).then( results => this.setState({plane: results.data}) );
+    };
 
     fetchAirplane();
 
